@@ -9,7 +9,7 @@ public class PrimeNumber {
 		int highN=s.nextInt();
 		int primeSum=0;
 		int primeMin=0;
-		for(int i=lowN; i<highN; i++) {
+		for(int i=lowN; i<=highN; i++) {
 			boolean isPrime=true;
 			int number= i;
 			int sqr= (int) Math.sqrt(number);
