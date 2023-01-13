@@ -19,7 +19,7 @@ public class goldbach {
 				a=num/2;
 				b=num/2+1;
 			}
-			System.out.println(a+" "+b);
+			
 			while(true) {
 				boolean tmp=true;
 				boolean isAPrime=false;
