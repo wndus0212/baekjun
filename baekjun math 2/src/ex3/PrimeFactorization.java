@@ -10,6 +10,10 @@ public class PrimeFactorization {
 		
 		int n=s.nextInt();
 		
+		if(n==1) {
+			return;
+		}
+		
 		while(true) {
 			boolean isPrime=true;
 			int number= n;
