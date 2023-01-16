@@ -9,8 +9,8 @@ public class FindMax {
 		int [][]n= new int[9][9];
 		
 		int maxN=0;
-		int maxX=0;
-		int maxY=0;
+		int maxX=1;
+		int maxY=1;
 		for(int i=0;i<9; i++) {
 			for(int j=0; j<9; j++) {
 				n[i][j]=s.nextInt();
