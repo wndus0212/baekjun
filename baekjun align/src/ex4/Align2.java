@@ -1,5 +1,10 @@
 package ex4;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 public class Align2 {
@@ -27,18 +32,15 @@ public class Align2 {
 		int l= left;
 		int r= mid+1;
 		int idx=left;
-		System.out.println("a[l]="+a[l]);
-		System.out.println("a[r]="+a[r]);
+
 		while(l<=mid&&r<=right) {
 			if(a[l]<=a[r]) {
 				sorted[idx]=a[l];
-				System.out.println("sorted[l]="+sorted[l]);
 				idx++;
 				l++;
 				
 			}else {
 				sorted[idx]=a[r];
-				System.out.println("sorted[r]="+sorted[r]);
 				idx++;
 				r++;
 			}
@@ -59,24 +61,28 @@ public class Align2 {
 			}
 		}
 		
-		for(int i=left;i<=right; i++) {
+		for(int i=left; i<=right;i++) {
 			a[i]=sorted[i];
 		}
-		
-		System.out.println("merged!");
+
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Scanner s= new Scanner(System.in);
-		int n= s.nextInt();
+		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(System.out));
+		int n= Integer.parseInt(br.readLine());
 		int[] num= new int [n];
 		for(int i=0; i<n; i++) {
-			num[i]=s.nextInt();
+			num[i]= Integer.parseInt(br.readLine());
 		}
 		
 		merge_sort(num);
 		for(int i=0; i<n; i++) {
-			System.out.println(num[i]);
+			bw.write(num[i]+"\n");
 		}
+		
+		bw.flush();
+		bw.close();
 	}
 }
